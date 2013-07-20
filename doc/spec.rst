@@ -17,23 +17,23 @@ resources associated with the view.
 
     .. attribute:: buffer
 
-        *OpenCL:* An object that has a ``_ptr`` attribute which is a :class:`int`
-        representing the ``cl_mem``.
+        *OpenCL:* An object that has a ``int_ptr`` attribute which is a :class:`int`
+        representing the ``cl_mem`` pointer.
 
-        *CUDA:* An object that has a ``_ptr`` attribute which is a :class:`int`
-        representing the numerical value of the CUDA device pointer.
+        *CUDA:* An object that is castable to an :class:`int` representing
+        the numerical value of the CUDA device pointer.
 
     .. attribute:: offset
 
-        *OpenCL:* Relative offset from the beginning of :class:`buffer`
-        indicating the start of the array data. For 
+        *OpenCL:* Relative offset from the beginning of :attr`buffer`
+        to the start of the array data.
 
         *CUDA:* Always zero.
 
     .. todo::
 
         We should also define a way to access a host pointer for the
-        relevant memory area.
+        relevant memory area, if available.
 
     .. attribute:: dtype
 
